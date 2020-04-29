@@ -1,0 +1,18 @@
+<h2>Find By Id</h2>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" required [(ngModel)]="id" name="id">
+    </div>
+ 
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<ul>
+  <li *ngFor="let student of students">
+    <h3>{{student.id}} - {{student.nombre}} {{student.dni}}</h3>
+  </li>
+</ul>

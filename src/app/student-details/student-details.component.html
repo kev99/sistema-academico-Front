@@ -1,0 +1,34 @@
+<div *ngIf="student">
+    <div>
+      <label>Nombre: </label> {{student.nombre}}
+    </div>
+    <div>
+      <label>Apellido: </label> {{student.apellido}}
+    </div>
+    <div>
+      <label>Dni: </label> {{student.dni}}
+    </div>
+    <div>
+      <label>Fecha de Nacimiento: </label> {{student.fecha_nacimiento}}
+    </div>
+    <div>
+      <label>E-mail: </label> {{student.mail}}
+    </div>
+    <div>
+      <label>Obra Social: </label> {{student.obra_social}}
+    </div>
+    <div>
+      <label>Certificado medico: </label> {{student.num_socio}}
+    </div>
+    <div>
+      <label>Cuota: </label> {{student.estado_cuota}}
+    </div>
+   
+    <span class="button is-small btn-primary" *ngIf='student.active' (click)='updateActive(false)'>NO pago cuota</span>
+   
+    <span class="button is-small btn-primary" *ngIf='!student.active' (click)='updateActive(true)'>Pago la cuota</span>
+   
+    <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
+   
+    <hr/>
+  </div>

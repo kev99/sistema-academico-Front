@@ -1,0 +1,37 @@
+<div class="text-center" >
+    <div class="box">
+    <div class="reg text-center">
+    <h3 class="mt-2">Complete sus datos</h3>
+    <form action="" method="">
+        <div class="imgcont">
+          <img src="assets/register-icon.png" height="80px" width="80px">
+        </div>
+        <div class="container">
+           <p>
+            <label for="user">Nombre de usuario:</label>
+            <input type="text" [(ngModel)]="user" name="user" required>
+         </p>
+          <p >
+          <label  for="mail">E-mail</label>
+          <input type="mail" [(ngModel)]="mail" name="mail" />
+        </p>
+        <p >
+            <label  for="psw">Contraseña:</label>
+            <input type="password" [(ngModel)]="psw" name="psw"/>
+         </p>
+          <p >
+            <label  for="psw2">Reingrese Contraseña:</label>
+            <input type="password" [(ngModel)]="psw2" name="psw2"  />          
+        </p>
+          <p>
+            <button (click)="singup()">
+    <span class="lform">Registrarse</span>
+    </button>
+        </p>   
+        </div>
+      </form>
+      <a href="/register">Ya tengo una cuenta</a>
+    </div>
+    </div>
+    </div>
+<h1>{{mensaje}}</h1> 

@@ -1,0 +1,59 @@
+<app-navbar visible="true"></app-navbar>
+<div class="text-center" >
+    <div class="box">
+    <div class="reg text-center">
+    <h3 class="mt-2">Ingrese Datos Del Alumno</h3>
+    <div [hidden]="submitted" style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="imgcont">
+          <img src="assets/stu.png" height="80px" width="80px">
+        </div>
+        <div class="container">
+           <p>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" required [(ngModel)]="student.nombre">
+        </p>
+        <p >
+          <label  for="lastname">Apellido:</label>
+          <input type="text" name="lastname" required [(ngModel)]="student.apellido">
+        </p>
+        <p >
+            <label  for="dni">Dni:</label>
+            <input type="number" name="dni" required [(ngModel)]="student.dni">
+          </p>
+          <p >
+            <label  for="date">Fecha de nacimiento:</label>
+            <input type="date" name="date" required [(ngModel)]="student.fecha_nacimiento">
+          </p>
+          <p >
+            <label  for="email">E-mail:</label>
+            <input type="e-mail" name="email" required [(ngModel)]="student.mail" />
+          </p>
+          <p >
+              <label  for="obrasocial">Obra social:</label>
+              <input type="text" name="obrasocial" required [(ngModel)]="student.obra_social"/>
+           </p>
+            <p >
+              <label  for="certificadomedico">Certificado Médico:</label>
+              <input type="text" name="certificadomedico" required [(ngModel)]="student.cert_medico"  />
+          </p>
+          <p >
+            <label  for="numerosocio">Numero de socio:</label>
+            <input type="number" name="numerosocio" required [(ngModel)]="student.num_socio"/>
+         </p>
+            <p>
+              <button type="submit">
+      <span class="lform">Registrar</span>
+      </button>
+          </p>   
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+<div [hidden]="!submitted">
+  <h3>You submitted successfully!</h3>
+  <button class="btn btn-success" (click)="newCustomer()">Add</button>
+</div>
+  

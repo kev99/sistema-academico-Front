@@ -1,0 +1,52 @@
+.box{
+    height: 1060px;
+    width: 580px;
+    background-color: rgba(98 , 187, 255, 0.7);
+    border-radius: 3%;
+    margin-top: 18px;
+    display: inline-block;    
+}
+.imgcont {
+    margin-bottom: 15px;
+  }
+.reg{
+font-family: 'Josefin Sans', sans-serif;
+color: rgb(28, 21, 43);
+font-size: 1.3rem;
+}
+form button {
+    background: #0d0b77;
+    border: 0;
+    text-transform: uppercase;
+    padding: 0.5em;
+    width: 70%;
+}
+.reg form p button:hover,
+.reg form p button:focus {
+    background: #18e6db;
+    transition: background-color 2s ease-out;
+    outline: 0;
+    color: rgb(0, 0, 0);
+}
+.reg form p input[type=text],
+.reg form p input[type=password],
+.reg form p input[type=e-mail],
+.reg form p input[type=number],
+.reg form p input[type=file],
+.reg form p input[type=date] {    
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(24, 20, 20);
+    box-sizing: border-box;
+    caret-color: rgb(0, 225, 255);
+    
+  }
+  .reg form p input[type=file]{
+    width: 90%;
+  }
+.lform {
+    color: rgb(224, 224, 224);
+    font-size: 1rem;
+}
+

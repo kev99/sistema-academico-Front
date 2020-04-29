@@ -1,0 +1,47 @@
+.box{
+    height: 500px;
+    width: 400px;
+    background-color: rgba(98 , 187, 255, 0.7);
+    border-radius: 3%;
+    margin-top: 60px;
+    display: inline-block;    
+}
+.imgcont {
+    margin-bottom: 15px;
+  }
+.reg{
+font-family: 'Josefin Sans', sans-serif;
+color: rgb(28, 21, 43);
+font-size: 1.3rem;
+}
+form button {
+    background: #06696d;
+    border: 0;
+    text-transform: uppercase;
+    padding: 0.5em;
+    width: 100%;
+}
+.reg form p button:hover,
+.reg form p button:focus {
+    background: #9c9c9c;
+    color: rgb(0, 0, 0);
+    transition: background-color 2s ease-out;
+    outline: 0;
+}
+.reg form p input[type=text],
+.reg form p input[type=password] {
+    width: 100%;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(24, 20, 20);
+    box-sizing: border-box;
+    caret-color: rgb(0, 209, 236);
+    
+  }
+.lform {
+    color: rgb(2, 1, 2);
+    font-size: 1rem;
+}
+.reg a{
+    color: black;
+}

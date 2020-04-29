@@ -1,0 +1,25 @@
+<nav *ngIf="visible" class="navbar navbar-expand-xl sticky-top ">
+  <a class="navbar-brand"  href="/home" >
+      <img  src="assets/gym.png" width="40" height="40">Gym Artist Marta Barrera
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav text-center">
+        <a class="nav-item nav-link active" href="/assistance">Asistencia</a>
+        <a class="nav-item nav-link active" href="/students">Alumnos</a>
+
+        <div class="dropdown nav-item">
+          <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Reportes
+          </a>
+          <div class="dropdown-menu ilink" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item "  href="/reportassistance">Reporte de asistencia</a>
+                        <a class="dropdown-item " href="/payreport">Reporte de pago</a>
+          </div>
+        </div>
+        <a class="nav-item nav-link active"  href="/newstudent" >Registrar Nuevo Alumno<span class="sr-only">(current)</span></a>
+  </div>
+  </div>
+  </nav>
