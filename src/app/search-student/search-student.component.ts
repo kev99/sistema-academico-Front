@@ -9,17 +9,17 @@ import { StudentServiceService } from '../services/student-service.service';
 })
 export class SearchStudentComponent  implements OnInit {
  
-  id: number;
+  dni: number;
   students: Student[];
  
   constructor(private dataService: StudentServiceService) { }
  
   ngOnInit() {
-    this.id = 0;
+    this.dni = 0;
   }
  
   private searchCustomers() {
-    this.dataService.getCustomersById(this.id)
+    this.dataService.getCustomersByDni(this.dni)
       .subscribe(students => this.students = students);
   }
  

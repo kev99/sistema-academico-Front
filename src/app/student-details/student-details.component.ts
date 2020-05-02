@@ -18,12 +18,12 @@ export class StudentDetailsComponent implements OnInit {
 
   }
  
-  updateActive(isActive: boolean) {
+  updateActive(isEstado_cuota: boolean) {
     this.studentService.updateCustomer(this.student.id,
       { nombre: this.student.nombre, apellido: this.student.apellido, dni: this.student.dni,
         fecha_nacimiento: this.student.fecha_nacimiento, mail: this.student.mail,
         obra_social: this.student.obra_social, cert_medico: this.student.cert_medico,
-        num_socio: this.student.num_socio, estado_cuota: isActive })
+        num_socio: this.student.num_socio, estado_cuota: isEstado_cuota })
       .subscribe(
         data => {
           console.log(data);

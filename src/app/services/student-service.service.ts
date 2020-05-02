@@ -31,8 +31,8 @@ export class StudentServiceService {
     return this.http.get(`${this.baseUrl}`);
   }
  
-  getCustomersById(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/id/${id}`);
+  getCustomersByDni(dni: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/id/${dni}`);
   }
  
   deleteAll(): Observable<any> {

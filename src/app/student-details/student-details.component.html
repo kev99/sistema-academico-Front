@@ -24,9 +24,9 @@
       <label>Cuota: </label> {{student.estado_cuota}}
     </div>
    
-    <span class="button is-small btn-primary" *ngIf='student.active' (click)='updateActive(false)'>NO pago cuota</span>
+    <span class="button is-small btn-primary" *ngIf='student.estado_cuota' (click)='updateActive(false)'>NO pago cuota</span>
    
-    <span class="button is-small btn-primary" *ngIf='!student.active' (click)='updateActive(true)'>Pago la cuota</span>
+    <span class="button is-small btn-primary" *ngIf='!student.estado_cuota' (click)='updateActive(true)'>Pago la cuota</span>
    
     <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
    
