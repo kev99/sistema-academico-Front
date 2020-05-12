@@ -1,48 +1,68 @@
 <app-navbar visible="true"></app-navbar>
+<div [hidden]="submitted" >
 <div class="text-center" >
     <div class="box">
-    <div class="reg text-center">
+    <div class="reg ">
     <h3 class="mt-2">Ingrese Datos Del Alumno</h3>
-    <div [hidden]="submitted" style="width: 300px;">
-    <form (ngSubmit)="onSubmit()">
+    <form #newStudentForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="imgcont">
           <img src="assets/stu.png" height="80px" width="80px">
         </div>
         <div class="container">
-           <p>
+           <div class="form-group">
             <label for="name">Nombre:</label>
-            <input type="text" name="name" required [(ngModel)]="student.nombre">
-        </p>
-        <p >
+            <input class="form-control" #name="ngModel" [class.is-invalid]="name.invalid && name.touched"
+            type="text" name="name" required [(ngModel)]="student.nombre">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Nombre es requerido</small>
+          </div>
+          <div class="form-group">
           <label  for="lastname">Apellido:</label>
-          <input type="text" name="lastname" required [(ngModel)]="student.apellido">
-        </p>
-        <p >
+          <input class="form-control"  #lastname="ngModel" [class.is-invalid]="lastname.invalid && lastname.touched"
+           type="text" name="lastname" required [(ngModel)]="student.apellido">
+           <small class="text-danger" [class.d-none]="lastname.valid || lastname.untouched">Apellido es requerido</small>
+        </div>
+        <div class="form-group">
             <label  for="dni">Dni:</label>
-            <input type="number" name="dni" required [(ngModel)]="student.dni">
-          </p>
-          <p >
+            <input class="form-control"  pattern="^\d{8}$" #dni="ngModel" [class.is-invalid]="dni.invalid && dni.touched"
+             type="number" name="dni" required [(ngModel)]="student.dni">
+          <div *ngIf="dni.errors && (dni.invalid && dni.touched) ">
+            <small class="text-danger" *ngIf="dni.errors.required">Dni es requerido</small>
+            <small class="text-danger" *ngIf="dni.errors.pattern">Dni debe tener 8 numeros</small>
+          </div>
+          </div>
+          <div class="form-group">
             <label  for="date">Fecha de nacimiento:</label>
-            <input type="date" name="date" required [(ngModel)]="student.fecha_nacimiento">
-          </p>
-          <p >
+            <input class="form-control" #date="ngModel" [class.is-invalid]="date.invalid && date.touched"
+             type="date" name="date" required [(ngModel)]="student.fecha_nacimiento">
+             <small class="text-danger" [class.d-none]="date.valid || date.untouched">Fecha es requerida</small>
+          </div>
+          <div class="form-group">
             <label  for="email">E-mail:</label>
-            <input type="e-mail" name="email" required [(ngModel)]="student.mail" />
-          </p>
-          <p >
+            <input class="form-control" #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+             type="e-mail" name="email" required [(ngModel)]="student.mail" />
+             <small class="text-danger" [class.d-none]="email.valid || email.untouched">E-mail es requerido</small>
+          </div>
+          <div class="form-group">
               <label  for="obrasocial">Obra social:</label>
-              <input type="text" name="obrasocial" required [(ngModel)]="student.obra_social"/>
-           </p>
-            <p >
+              <input class="form-control" #obrasocial="ngModel" [class.is-invalid]="obrasocial.invalid && obrasocial.touched"
+               type="text" name="obrasocial" required [(ngModel)]="student.obra_social"/>
+               <small class="text-danger" [class.d-none]="obrasocial.valid || obrasocial.untouched">Obra social es requerido</small>
+            </div>
+            <div class="form-group">
               <label  for="certificadomedico">Certificado Médico:</label>
-              <input type="text" name="certificadomedico" required [(ngModel)]="student.cert_medico"  />
-          </p>
-          <p >
+              <input class="form-control" #certificadomedico="ngModel" [class.is-invalid]="certificadomedico.invalid && certificadomedico.touched"
+              type="text" name="certificadomedico" required [(ngModel)]="student.cert_medico"  />
+              <small class="text-danger" [class.d-none]="certificadomedico.valid || certificadomedico.untouched">Certificado Medico es requerido</small>
+
+            </div>
+            <div class="form-group">
             <label  for="numerosocio">Numero de socio:</label>
-            <input type="number" name="numerosocio" required [(ngModel)]="student.num_socio"/>
-         </p>
+            <input  class="form-control" #numerosocio="ngModel" [class.is-invalid]="numerosocio.invalid && numerosocio.touched"
+             type="number" name="numerosocio" required [(ngModel)]="student.num_socio"/>
+             <small class="text-danger" [class.d-none]="numerosocio.valid || numerosocio.untouched">Numero de Socio es requerido</small>
+          </div>
             <p>
-              <button type="submit">
+              <button [disabled]="newStudentForm.form.invalid" type="submit" >
       <span class="lform">Registrar</span>
       </button>
           </p>   
@@ -53,7 +73,14 @@
       </div>
       </div>
 <div [hidden]="!submitted">
-  <h3>You submitted successfully!</h3>
-  <button class="btn btn-success" (click)="newCustomer()">Add</button>
+  <div class="text-center" >
+  <div class="box2">
+  <div class="text-center reg">
+  <h2 class="mt-1">El alumno ha sido registrado</h2>
+  <a href="/newinscription" class="btn b3 btn-success"><span class="in">Inscribir alumno a un nivel</span></a>
+  <button class="b1 btn" (click)="newStudent()"><span class="lform">Agregar otro alumno</span></button>
+</div>
+</div>
+</div>
 </div>
   

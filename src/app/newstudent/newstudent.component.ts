@@ -19,13 +19,13 @@ export class NewstudentComponent  implements OnInit {
   ngOnInit() {
   }
  
-  newCustomer(): void {
+  newStudent(): void {
     this.submitted = false;
     this.student = new Student();
   }
  
   save() {
-    this.studentService.createCustomer(this.student)
+    this.studentService.createStudent(this.student)
       .subscribe(data => console.log(data), error => console.log(error));
     this.student = new Student();
   }

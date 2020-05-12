@@ -18,12 +18,12 @@ export class SearchStudentComponent  implements OnInit {
     this.dni = 0;
   }
  
-  private searchCustomers() {
-    this.dataService.getCustomersByDni(this.dni)
+  private searchStudents() {
+    this.dataService.getStudentsByDni(this.dni)
       .subscribe(students => this.students = students);
   }
  
   onSubmit() {
-    this.searchCustomers();
+    this.searchStudents();
   }
 }

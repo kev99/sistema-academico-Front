@@ -18,17 +18,9 @@ export class StudentsComponent implements OnInit {
     this.reloadData();
   }
  
-  deleteCustomers() {
-    this.studentService.deleteAll()
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log('ERROR: ' + error));
-  }
+
  
   reloadData() {
-    this.students = this.studentService.getCustomersList();
+    this.students = this.studentService.getStudentsList();
   }
 }

@@ -1,0 +1,24 @@
+<div class="text-center ">
+    <div *ngIf="inscription" >
+      <div class="list container">
+        <div>
+          <label>Id: </label> {{inscription.id}}
+        </div>
+        <div>
+          <label>Numero alumno: </label> {{inscription.id_alum}}
+        </div>
+        <div>
+          <label>Numero actividad: </label> {{inscription.id_act}}
+        </div>
+        <div>
+          <label>Fecha de Inscripciion: </label> {{inscription.fecha_ins}}
+        </div>
+        <div>
+          <label>Eliminar Inscription</label> 
+          <button class="button is-small btn-danger" (click)='deleteInscription()'>Eliminar</button>
+        </div>
+        <br>
+        <hr>
+      </div>
+      </div>
+      </div>

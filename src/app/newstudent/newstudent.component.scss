@@ -1,10 +1,17 @@
 .box{
-    height: 1060px;
     width: 580px;
     background-color: rgba(98 , 187, 255, 0.7);
     border-radius: 3%;
     margin-top: 18px;
     display: inline-block;    
+}
+.box2{
+    height: 89px;
+    width: 400px;
+    background-color: rgba(98 , 187, 255, 0.7);
+    border-radius: 3%;
+    margin-top: 18px;
+    display: inline-block;  
 }
 .imgcont {
     margin-bottom: 15px;
@@ -49,4 +56,19 @@ form button {
     color: rgb(224, 224, 224);
     font-size: 1rem;
 }
-
+.b1{
+  background-color: rgb(46, 46, 231);
+}
+.b2{
+  background-color: rgb(38, 216, 207);
+}
+.in{
+  color: black;
+  font-size: 1rem;
+}
+.b1:hover{
+  background-color: rgb(146, 5, 134);
+}
+.b3:hover{
+  background-color: rgb(146, 5, 134);
+}

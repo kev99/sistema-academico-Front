@@ -18,8 +18,8 @@ export class StudentDetailsComponent implements OnInit {
 
   }
  
-  updateActive(isEstado_cuota: boolean) {
-    this.studentService.updateCustomer(this.student.id,
+  updateEstado_cuota(isEstado_cuota: boolean) {
+    this.studentService.updateStudent(this.student.id,
       { nombre: this.student.nombre, apellido: this.student.apellido, dni: this.student.dni,
         fecha_nacimiento: this.student.fecha_nacimiento, mail: this.student.mail,
         obra_social: this.student.obra_social, cert_medico: this.student.cert_medico,
@@ -32,8 +32,8 @@ export class StudentDetailsComponent implements OnInit {
         error => console.log(error));
   }
  
-  deleteCustomer() {
-    this.studentService.deleteCustomer(this.student.id)
+  deleteStudent() {
+    this.studentService.deleteStudent(this.student.id)
       .subscribe(
         data => {
           console.log(data);

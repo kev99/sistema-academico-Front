@@ -1,0 +1,42 @@
+<app-navbar visible="true"></app-navbar>
+<div class="text-center" >
+    <h1 class="display-1">Inscripciones</h1>
+    <br>
+    <div [hidden]="submitted" >
+    <div class="box">
+        <form  #newInscriptionForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                 <label for="id_alum">Ingrese Numero Del Alumno:</label>
+                 <br>
+                 <input type="number" #id_alum="ngModel" name="id_alum" class="form-control" [(ngModel)]="inscription.id_alum" required>
+              </div>
+              <div class="form-group">
+                <label for="id_act ">Elija Actividad</label>
+                <br>
+                <select class="form-control" id="id_act" #id_act="ngModel" name="id_act" [(ngModel)]="inscription.id_act">
+                    <option disabled selected value>---</option>
+                    <option value='1'>Escuelita-Pulgas</option>
+                    <option value='2'>Escuelita-Premini</option>
+                    <option value='3'>Escuelita-Mini</option>
+                    <option value='4'>Escuelita-Preinfantil</option>
+                    <option value='5'>Escuelita-Infantil</option>
+                    <option value='6'>Escuelita-Juveniles</option>
+                    <option value='7'>Escuela-Avanzada</option>
+                    <option value='8'>Pre equipo</option>
+                    <option value='9'>Equipo</option>
+                </select>
+            </div>
+             <p>
+                 <button [disabled]="newInscriptionForm.form.invalid" type="submit">
+         <span >Inscribir</span>
+         </button>
+             </p> 
+</form>
+</div>
+</div>
+</div>
+<div [hidden]="!submitted">
+    <div class="text-center" >
+<h2 class="tr display-2">El alumno ha sido inscripto </h2>
+</div>
+</div>

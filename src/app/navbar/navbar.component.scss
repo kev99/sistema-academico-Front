@@ -3,19 +3,19 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 8vh;
+    min-height: 10vh;
     background-color: black;
     border-bottom: solid silver;
     border-top: solid silver;
 }
 .navbar .navbar-brand {
     font-family: 'Satisfy', cursive;
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
 }
 .navbar .navbar-brand img {
    border-radius: 50%;
-   margin-right: 5px;
+   margin-right: 3px;
 }
 .navbar-nav{
 display: flex;
@@ -26,7 +26,7 @@ display: flex;
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
-    font-size: 20px;
+    font-size: 16px;
     align-items: center;
     }
     .navbar-nav a:hover{

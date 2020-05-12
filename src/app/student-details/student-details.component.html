@@ -1,4 +1,9 @@
-<div *ngIf="student">
+<div class="text-center ">
+<div *ngIf="student" >
+  <div class="list container">
+    <div>
+      <label>Numero: </label> {{student.id}}
+    </div>
     <div>
       <label>Nombre: </label> {{student.nombre}}
     </div>
@@ -21,14 +26,14 @@
       <label>Certificado medico: </label> {{student.num_socio}}
     </div>
     <div>
-      <label>Cuota: </label> {{student.estado_cuota}}
+      <label>Cuota: </label> {{student.estado_cuota}} <button class="btn is-small btn-primary" *ngIf='student.estado_cuota' (click)='updateEstado_cuota(false)'>No pago cuota</button>
+   
+      <button class="btn is-small btn-success" *ngIf='!student.estado_cuota' (click)='updateEstado_cuota(true)'>Pago la cuota</button>
+      <br>
+      <label>Eliminar Alumno</label> <button class="button is-small btn-danger" (click)='deleteStudent()'>Eliminar</button>
     </div>
-   
-    <span class="button is-small btn-primary" *ngIf='student.estado_cuota' (click)='updateActive(false)'>NO pago cuota</span>
-   
-    <span class="button is-small btn-primary" *ngIf='!student.estado_cuota' (click)='updateActive(true)'>Pago la cuota</span>
-   
-    <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
-   
-    <hr/>
+    <br>
+    <hr>
+  </div>
+  </div>
   </div>

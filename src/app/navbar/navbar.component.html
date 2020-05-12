@@ -7,9 +7,50 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav text-center">
-        <a class="nav-item nav-link active" href="/assistance">Asistencia</a>
-        <a class="nav-item nav-link active" href="/students">Alumnos</a>
-
+        <a class="nav-item nav-link active" href="/activities">Actividades</a>
+        <span class="sr-only">(current)</span>
+        <div class="dropdown nav-item">
+          <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Alumnos
+          </a>
+          <div class="dropdown-menu ilink" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item " href="/students">Ver alumnos</a>
+            <a class="dropdown-item" href="/searchstudent">Buscar Alumnos</a>
+            <a class="dropdown-item"  href="/newstudent" >Registrar Nuevo Alumno</a>
+            <a class="dropdown-item"  href="/adults" >Adultos</a>
+            <a class="dropdown-item"  href="/searchadult">Buscar Adultos</a>
+          </div>
+        </div>
+        <div class="dropdown nav-item">
+          <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Inscripciones
+          </a>
+          <div class="dropdown-menu ilink" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/inscriptions">Ver Inscripciones</a>
+            <a class="dropdown-item" href="/searchinscripcion">Buscar Inscripciones</a>
+            <a class="dropdown-item" href="/newinscription">Nueva Inscripcion</a>
+          </div>
+        </div>
+        <div class="dropdown nav-item">
+          <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Pagos
+          </a>
+          <div class="dropdown-menu ilink" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/pays">Ver Pagos</a>
+            <a class="dropdown-item " href="/searchpay">Buscar pago</a>
+            <a class="dropdown-item " href="/newpay">Generar pago</a>
+          </div>
+        </div>
+        <div class="dropdown nav-item">
+          <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Asistencia
+          </a>
+          <div class="dropdown-menu ilink" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/newassistance">Marcar Asistencia</a>  
+            <a class="dropdown-item" href="/assists">Ver Asistencias</a>
+            <a class="dropdown-item" href="/searchassistence">Buscar Asistencia</a>  
+          </div>
+        </div>
         <div class="dropdown nav-item">
           <a class="nav-link dropdown-toggle active" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Reportes
@@ -19,7 +60,7 @@
                         <a class="dropdown-item " href="/payreport">Reporte de pago</a>
           </div>
         </div>
-        <a class="nav-item nav-link active"  href="/newstudent" >Registrar Nuevo Alumno<span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="/databaseinfo">Info Data Base</a>
   </div>
   </div>
   </nav>

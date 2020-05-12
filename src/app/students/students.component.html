@@ -1,14 +1,5 @@
 <app-navbar visible="true"></app-navbar>
-<h1 class="display-2 text-center">Listado de alumnos</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div *ngFor="let student of students | async" style="width: 300px;">
+<h1 class="display-2 text-center mb-3">Listado de alumnos</h1>
+<div *ngFor="let student of students | async" >
     <app-student-details [student]='student'></app-student-details>
-  </div>
-
-  <div>
-    <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
   </div>
