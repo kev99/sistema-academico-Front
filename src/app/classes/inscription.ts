@@ -1,7 +1,16 @@
+import { Student } from './student';
+import { Activity } from './activity';
+
 export class Inscription {
+    
+   
     id: number;
-    id_alum  : number;
-    id_act  : number;
+    alumno  : Student
+    actividad  : Activity
     fecha_ins: Date;
 
+    public constructor(init?: Partial<Inscription>) {
+        Object.assign(this, init);
+    }
+    
 }

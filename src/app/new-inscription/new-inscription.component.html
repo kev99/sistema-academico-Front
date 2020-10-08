@@ -4,21 +4,21 @@
     <br>
     <div [hidden]="submitted" >
     <div class="box">
-        <form  #newInscriptionForm="ngForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                 <label for="id_alum">Ingrese Numero Del Alumno:</label>
+        <form  [formGroup]="InscriptionForm" (ngSubmit)="onSubmit()">
+            <div class="form-group"  formGroupName="alumno">
+                 <label for="alumno">Ingrese Numero Del Alumno:</label>
                  <br>
-                 <input type="number" #id_alum="ngModel" name="id_alum" class="form-control" [(ngModel)]="inscription.id_alum" required>
+                 <input type="number" formControlName="id"  name="alumno" class="form-control"  required>
               </div>
-              <div class="form-group">
-                <label for="id_act ">Elija Actividad</label>
+              <div class="form-group" formGroupName="actividad">
+                <label for="actividad ">Elija Actividad</label>
                 <br>
-                <select class="form-control" id="id_act" #id_act="ngModel" name="id_act" [(ngModel)]="inscription.id_act">
+                <select class="form-control" formControlName="id_a" id="actividad"   name="actividad"  >
                     <option disabled selected value>---</option>
                     <option value='1'>Escuelita-Pulgas</option>
                     <option value='2'>Escuelita-Premini</option>
                     <option value='3'>Escuelita-Mini</option>
-                    <option value='4'>Escuelita-Preinfantil</option>
+                    <option value="4">Escuelita-Preinfantil</option>
                     <option value='5'>Escuelita-Infantil</option>
                     <option value='6'>Escuelita-Juveniles</option>
                     <option value='7'>Escuela-Avanzada</option>
@@ -26,8 +26,9 @@
                     <option value='9'>Equipo</option>
                 </select>
             </div>
+            <input disabled type="date" formControlName="fecha_ins">
              <p>
-                 <button [disabled]="newInscriptionForm.form.invalid" type="submit">
+                 <button [disabled]="!InscriptionForm.valid" type="submit">
          <span >Inscribir</span>
          </button>
              </p> 

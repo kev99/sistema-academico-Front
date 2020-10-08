@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Inscription } from '../classes/inscription';
-import { InscriptionServiceService } from '../services/inscription-service.service';
+ import { InscriptionServiceService } from '../services/inscription-service.service';
+  import { FormGroup , FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,35 +9,72 @@ import { InscriptionServiceService } from '../services/inscription-service.servi
   templateUrl: './new-inscription.component.html',
   styleUrls: ['./new-inscription.component.scss']
 })
-export class NewInscriptionComponent  implements OnInit {
-
-
-  inscription: Inscription  = new Inscription();
+export class NewInscriptionComponent  implements OnInit {  
   submitted = false;
+   InscriptionForm: FormGroup;
 
-  constructor(private inscriptionService: InscriptionServiceService) { }
+   createInscriptionForm ()  { 
+    return  new  FormGroup ( { 
+      alumno :  new  FormGroup ( { 
+        id :  new  FormControl ( ) 
+       } ) ,
+       actividad :  new  FormGroup ( { 
+        id_a :  new  FormControl ( ) 
+       } ) , 
+       fecha_ins :  new  FormControl ( ) , 
+      
+    } ) ; 
+  }
+
+//   InscriptionForm = new FormGroup({
+//     alumno: new FormGroup({id : new FormControl('',Validators.required)
+//   }),
+//    actividad: new FormGroup({id_a: new FormControl('',Validators.required)
+// }),
+//    fecha : new FormControl('',Validators.required),
+//   });
+    
+
+  constructor(private inscriptionService: InscriptionServiceService) { 
 
 
+    this.InscriptionForm = this.createInscriptionForm();
+  }
 
+   
 
   newInscription(): void {
     this.submitted = false;
-    this.inscription = new Inscription();
   }
 
   save() {
-    this.inscriptionService.createInscription(this.inscription)
-      .subscribe(data => console.log(data), error => console.log(error));
-    this.inscription = new Inscription();
-  }
-
+    console.log(this.InscriptionForm.value);
+    this.inscriptionService.createInscription(this.InscriptionForm.value)
+      .subscribe(
+        response => console.log('Success' , response),
+         error => console.error('Error', error));
+   }
   ngOnInit() {
-      
+    this.InscriptionForm.patchValue({
+      fecha_ins: this.formatDate(new Date()),
+    });
+    
+   }
+   
+   private formatDate(date) {
+    const d = new Date(date);
+    let month = '' + (d.getMonth() + 1);
+    let day = '' + d.getDate();
+    const year = d.getFullYear();
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+    return [year, month, day].join('-');
   }
-
   onSubmit() {
     this.submitted = true;
-    this.save();
+    
+    console.log(this.InscriptionForm.value);
+    this.save(); 
   }
 
 }

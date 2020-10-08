@@ -11,7 +11,7 @@ export class StudentServiceService {
  
   constructor(private http: HttpClient) { }
  
-  getCustomer(id: number): Observable<Object> {
+  getStudent(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
  

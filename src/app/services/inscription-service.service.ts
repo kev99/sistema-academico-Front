@@ -15,8 +15,9 @@ export class InscriptionServiceService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
  
-  createInscription(inscription: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/create`, inscription);
+  createInscription(inscr: any)  {
+    console.log(inscr );
+    return this.http.post<any>(`${this.baseUrl}` + `/create`, inscr );
   }
  
   updateInscription(id : number, value: any): Observable<Object> {
@@ -31,12 +32,9 @@ export class InscriptionServiceService {
     return this.http.get(`${this.baseUrl}`);
   }
  
-  getInscriptionsById(id : number): Observable<any> {
+  getInscriptionsByStudentId(id : number): Observable<any> {
     return this.http.get(`${this.baseUrl}/id/${id}`);
   }
  
  
-
-
-
 }

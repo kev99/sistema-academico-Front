@@ -8,4 +8,7 @@ export class Activity {
     valor : number ;
 
 
+    public constructor(init?: Partial<Activity>) {
+        Object.assign(this, init);
+    }
 }

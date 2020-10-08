@@ -5,7 +5,7 @@
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label style=" font-size: 1.5rem;" for="id_alum">Ingrese Numero del alumno:</label>
-          <input type="text" class="form-control" id="id" required [(ngModel)]="id_alum" name="id_alum">
+          <input type="text" class="form-control" id="id_alum" required [(ngModel)]="id_alum" name="id_alum">
         </div>
         <div class="btn-group">
           <button type="submit" class="btn btn-dark">Buscar</button>
@@ -16,9 +16,10 @@
     <div class="text-center mt-5" >
     <div class="lis">
       <div class="mt-2" *ngFor="let inscription of inscriptions">
-        <h3>Numero de inscripcion: {{inscription.id}} - Numero de alumno: {{inscription.id_alum}}</h3>
+        <h3>Numero de inscripcion: {{inscription.id}} -</h3>
+        <h3>Alumno: {{inscription.alumno.nombre}} - {{inscription.alumno.apellido}} -  {{inscription.alumno.dni}} </h3>
         <h3>Fecha de inscripcion: {{inscription.fecha_ins}}</h3>
-        <h3>Numero de actividad : {{inscription.id_act}}</h3>
+        <h3>Actividad : {{inscription.actividad.nivel}}-{{inscription.actividad.categoria}}</h3>
       </div>
     </div>
     </div>

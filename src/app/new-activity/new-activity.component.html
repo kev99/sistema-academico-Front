@@ -1,0 +1,63 @@
+<app-navbar visible="true"></app-navbar>
+<div [hidden]="submitted" >
+<div class="text-center" >
+    <div class="box">
+    <div class="reg ">
+    <h3 class="mt-2">Ingrese datos de la actividad</h3>
+    <form #newActivityForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="imgcont">
+          <img src="assets/stu.png" height="80px" width="80px">
+        </div>
+        <div class="container">
+           <div class="form-group">
+            <label for="nivel">Nivel:</label>
+            <input class="form-control" #nivel="ngModel" [class.is-invalid]="nivel.invalid && nivel.touched"
+            type="text" name="nivel" required [(ngModel)]="activity.nivel">
+            <small class="text-danger" [class.d-none]="nivel.valid || nivel.untouched">Nivel es requerido</small>
+          </div>
+          <div class="form-group">
+          <label  for="categoria">Categoria:</label>
+          <input class="form-control"  #categoria="ngModel" [class.is-invalid]="categoria.invalid && categoria.touched"
+           type="text" name="categoria" required [(ngModel)]="activity.categoria">
+           <small class="text-danger" [class.d-none]="categoria.valid || categoria.untouched">Categoria es requerido</small>
+        </div>
+        <div class="form-group">
+            <label  for="edad">Edad:</label>
+            <input class="form-control"  #edad="ngModel" [class.is-invalid]="edad.invalid && edad.touched"
+             type="text" name="edad" required [(ngModel)]="activity.edad">
+             <small class="text-danger" [class.d-none]="edad.valid || edad.untouched">Edad es requerido</small>
+          </div>
+          <div class="form-group">
+            <label  for="dias_practica">Dias de practica:</label>
+            <input class="form-control" #dias_practica="ngModel" [class.is-invalid]="dias_practica.invalid && dias_practica.touched"
+             type="text" name="dias_practica" required [(ngModel)]="activity.dias_practica">
+             <small class="text-danger" [class.d-none]="dias_practica.valid || dias_practica.untouched">Dias de practica es requerido</small>
+          </div>
+          <div class="form-group">
+            <label  for="valor">Valor:</label>
+            <input class="form-control" #valor="ngModel" [class.is-invalid]="valor.invalid && valor.touched"
+             type="number" name="valor" required [(ngModel)]="activity.valor" />
+             <small class="text-danger" [class.d-none]="valor.valid || valor.untouched">Valor es requerido</small>
+          </div>
+            <p>
+              <button [disabled]="newActivityForm.form.invalid" type="submit" >
+      <span class="lform">Crear</span>
+      </button>
+          </p>   
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+      </div>
+<div [hidden]="!submitted">
+  <div class="text-center" >
+  <div class="box2">
+  <div class="text-center reg">
+  <h2 class="mt-1">La actividad ha sido creada</h2>
+  <button class="b1 btn" (click)="newActivity()"><span class="lform">Agregar otra actividad</span></button>
+</div>
+</div>
+</div>
+</div>
+  

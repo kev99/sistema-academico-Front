@@ -20,7 +20,6 @@ import { BaseComponent } from './base/base.component';
 import { PaysComponent } from './pays/pays.component';
 import { PayDetailsComponent } from './pay-details/pay-details.component';
 import { AsistenceDetailsComponent } from './asistence-details/asistence-details.component';
-import { ActivityDetailsComponent } from './activity-details/activity-details.component';
 import { AdultDetailsComponent } from './adult-details/adult-details.component';
 import { SearchAsistenceComponent } from './search-asistence/search-asistence.component';
 import { SearchInscriptionComponent } from './search-inscription/search-inscription.component';
@@ -32,6 +31,9 @@ import { ActivityComponent } from './activity/activity.component';
 import { NewPayComponent } from './new-pay/new-pay.component';
 import { NewInscriptionComponent } from './new-inscription/new-inscription.component';
 import { NewAsistenceComponent } from './new-asistence/new-asistence.component';
+import { ActivitiesDetailsComponent } from './activities-details/activities-details.component';
+import { NewActivityComponent } from './new-activity/new-activity.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,7 +55,6 @@ import { NewAsistenceComponent } from './new-asistence/new-asistence.component';
     PaysComponent,
     PayDetailsComponent,
     AsistenceDetailsComponent,
-    ActivityDetailsComponent,
     AdultDetailsComponent,
     SearchAsistenceComponent,
     SearchInscriptionComponent,
@@ -64,13 +65,16 @@ import { NewAsistenceComponent } from './new-asistence/new-asistence.component';
     ActivityComponent,
     NewPayComponent,
     NewInscriptionComponent,
-    NewAsistenceComponent
+    NewAsistenceComponent,
+    ActivitiesDetailsComponent,
+    NewActivityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

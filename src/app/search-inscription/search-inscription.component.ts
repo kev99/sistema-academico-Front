@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InscriptionServiceService } from '../services/inscription-service.service';
 import { Inscription } from '../classes/inscription';
+import { Student } from '../classes/student';
 
 @Component({
   selector: 'app-search-inscription',
@@ -12,6 +13,7 @@ export class SearchInscriptionComponent implements OnInit {
 
   id_alum: number;
   inscriptions: Inscription[];
+  students: Student[];
 
   constructor(private dataService: InscriptionServiceService) { }
 
@@ -20,7 +22,7 @@ export class SearchInscriptionComponent implements OnInit {
   }
 
   private searchInscriptions() {
-    this.dataService.getInscriptionsById(this.id_alum)
+    this.dataService.getInscriptionsByStudentId(this.id_alum)
       .subscribe(inscriptions => this.inscriptions = inscriptions);
   }
  

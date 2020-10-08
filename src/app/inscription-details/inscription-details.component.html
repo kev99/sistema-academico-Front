@@ -5,13 +5,13 @@
           <label>Id: </label> {{inscription.id}}
         </div>
         <div>
-          <label>Numero alumno: </label> {{inscription.id_alum}}
+          <label>Alumno: </label> {{inscription.alumno.nombre}} {{ inscription.alumno.apellido }}
         </div>
         <div>
-          <label>Numero actividad: </label> {{inscription.id_act}}
+          <label>Actividad: </label> {{inscription.actividad.nivel}} {{ inscription.actividad.categoria}}
         </div>
         <div>
-          <label>Fecha de Inscripciion: </label> {{inscription.fecha_ins}}
+          <label>Fecha de Inscripcion: </label> {{inscription.fecha_ins}}
         </div>
         <div>
           <label>Eliminar Inscription</label> 

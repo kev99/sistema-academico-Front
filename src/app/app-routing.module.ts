@@ -22,6 +22,7 @@ import { SearchAsistenceComponent } from './search-asistence/search-asistence.co
 import { SearchInscriptionComponent } from './search-inscription/search-inscription.component';
 import { NewInscriptionComponent } from './new-inscription/new-inscription.component';
 import { NewAsistenceComponent } from './new-asistence/new-asistence.component';
+import { NewActivityComponent } from './new-activity/new-activity.component';
 
 
 
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path:'newstudent' , component: NewstudentComponent},
   { path:'newpay' , component: NewPayComponent },
   { path:'newinscription' , component: NewInscriptionComponent },
+  { path:'newactivity' , component: NewActivityComponent },
   { path:'databaseinfo' , component: BaseComponent },
 
 ];
