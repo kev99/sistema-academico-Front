@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
- 
+import * as moment from 'moment';
 import { Student } from '../classes/student';
 import { StudentServiceService } from '../services/student-service.service';
-
 
 @Component({
   selector: 'app-newstudent',
@@ -10,11 +9,12 @@ import { StudentServiceService } from '../services/student-service.service';
   styleUrls: ['./newstudent.component.scss']
 })
 export class NewstudentComponent  implements OnInit {
- 
   student: Student = new Student();
   submitted = false;
- 
-  constructor(private studentService: StudentServiceService) { }
+  adultformview = false;
+
+  constructor(private studentService: StudentServiceService) {
+   }
  
   ngOnInit() {
   }
@@ -34,4 +34,18 @@ export class NewstudentComponent  implements OnInit {
     this.submitted = true;
     this.save();
   }
+  public ageFromDateOfBirthday( dateOfBirthday: any): number {
+    console.log(moment().diff(dateOfBirthday, 'years'));
+    return moment().diff(dateOfBirthday, 'years');
+  }
+
+  openadultform() {
+    let  studentage =  this.ageFromDateOfBirthday(this.student.fecha_nacimiento);
+    if (studentage < 18) {
+      this.adultformview=true;
+    }  if (studentage > 18) {
+        this.adultformview=false;
+      }
+  }
+   
 }

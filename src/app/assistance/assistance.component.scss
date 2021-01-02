@@ -1,45 +1,5 @@
-.box{
-    height: 350px;
-    width: 300px;
-    background-color: rgba(98 , 187, 255, 0.7);
-    border-radius: 3%;
-    margin-top: 30px;
-    display: inline-block;    
+h1{
+    color: rgb(35, 68, 255);
+    font-family: 'Baloo Paaji 2', cursive;
+background-color: rgba(0, 0, 0,0.6);
 }
-.imgcont {
-    margin-bottom: 8px;
-  }
-.reg{
-font-family: 'Josefin Sans', sans-serif;
-color: rgb(28, 21, 43);
-font-size: 1.3rem;
-}
-form button {
-    background: #000000;
-    border: 0;
-    text-transform: uppercase;
-    padding: 0.5em;
-    width: 50%;
-    margin-top: 8px;
-}
-.reg form p button:hover,
-.reg form p button:focus {
-    background: #d63636;
-    color: rgb(255, 255, 255);
-    transition: background-color 2s ease-out;
-    outline: 0;
-}
-.reg form p input[type=number] {
-    width: 50%;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid rgb(24, 20, 20);
-    box-sizing: border-box;
-    caret-color: rgb(0, 209, 236);
-    
-  }
-.lform {
-    color: rgb(0, 195, 255);
-    font-size: 1rem;
-}
-

@@ -1,1 +1,5 @@
 <app-navbar visible="true"></app-navbar>
+<h1 class="display-2 text-center mb-3">Asistencias</h1>
+<div *ngFor="let assistence of assistences | async" >
+    <app-asistence-details [assistence]='assistence'></app-asistence-details>
+  </div>

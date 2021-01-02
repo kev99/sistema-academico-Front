@@ -1,1 +1,24 @@
-<p>asistence-details works!</p>
+<div class="text-center ">
+    <div *ngIf="assistence" >
+      <div class="list container">
+        <div>
+          <label>Id: </label> {{assistence.id_asistencia}}
+        </div>
+        <div>
+          <label>Alumno: </label> {{assistence.alumno.nombre}} {{ assistence.alumno.apellido }}
+        </div>
+        <div>
+          <label>Actividad: </label> {{assistence.actividad.nivel}} {{ assistence.actividad.categoria}}
+        </div>
+        <div>
+          <label>Fecha de Asistencia: </label> {{assistence.fecha_asistencia}}
+        </div>
+        <div>
+          <label>Eliminar Asistencia</label> 
+          <button class="button is-small btn-danger" (click)='deleteAssistence()'>Eliminar</button>
+        </div>
+        <br>
+        <hr>
+      </div>
+      </div>
+      </div>

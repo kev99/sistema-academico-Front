@@ -1,20 +1,38 @@
 <app-navbar visible="true"></app-navbar>
 <div class="text-center" >
+  <div [hidden]="submitted" >
     <div class="box">
     <div class="reg text-center">
     <h3 class="mt-2">Marcar Asistencia</h3>
-    <form action="" method="">
-        <div class="imgcont">
-          <img src="assets/asis.png" height="80px" width="80px">
-        </div>
-        <div class="container">
-           <p>
-            <label for="dni">Ingrese DNI Del Alumno:</label>
-            <input type="number" name="dni" required>
-         </p>
-        </div>
+    <div class="imgcont">
+      <img src="assets/asis.png" height="80px" width="80px">
+    </div>
+    <form [formGroup]="AsistenceForm" (ngSubmit)="onSubmit()">
+      <div class="form-group container"  formGroupName="alumno">
         <p>
-            <button type="submit">
+         <label for="id">Ingrese Id Del Alumno:</label>
+         <input type="number" formControlName="id"  name="id" class="form-control"   >
+       </p>
+     </div>
+     <div class="form-group" formGroupName="actividad">
+      <label for="actividad ">Actividad</label>
+      <br>
+      <select class="form-control" formControlName="id_a" id="id_a"   name="id_a"  >
+          <option disabled selected value>---</option>
+          <option value='1'>Escuelita-Pulgas</option>
+          <option value='2'>Escuelita-Premini</option>
+          <option value='3'>Escuelita-Mini</option>
+          <option value="4">Escuelita-Preinfantil</option>
+          <option value='5'>Escuelita-Infantil</option>
+          <option value='6'>Escuelita-Juveniles</option>
+          <option value='7'>Escuela-Avanzada</option>
+          <option value='8'>Pre equipo</option>
+          <option value='9'>Equipo</option>
+      </select>
+  </div>
+        <input disabled type="date" formControlName="fecha_asistencia">
+        <p>
+            <button [disabled]="!AsistenceForm.valid" type="submit">
     <span class="lform">Asistió</span>
     </button>
         </p>   
@@ -22,3 +40,10 @@
     </div>
     </div>
     </div>
+  </div>
+    <div [hidden]="!submitted">
+      <div class="text-center tr" >
+  <h2 class="  display-2">La asistencia fue marcada</h2>
+  <button class=" b1 btn" (click)="newAssistence()"><span class="lform">Marcar Otra asistencia</span></button>
+  </div>
+  </div>

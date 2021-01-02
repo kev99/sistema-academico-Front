@@ -1,1 +1,25 @@
 <app-navbar visible="true"></app-navbar>
+<div class="text-center mt-2" >
+    <div class="find" style=" display: inline-block; " >
+    <h2 class="mt-2">Buscar Asistencia</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label style=" font-size: 1.5rem;" for="id_alum">Ingrese Numero del alumno:</label>
+          <input type="text" class="form-control" id="id_alum" required [(ngModel)]="id_alum" name="id_alum">
+        </div>
+        <div class="btn-group">
+          <button type="submit" class="btn btn-dark">Buscar</button>
+        </div>
+      </form>
+    </div>
+    </div>
+    <div class="text-center mt-5" >
+    <div class="lis">
+      <div class="mt-2" *ngFor="let assistence of assistences">
+        <h3>Numero de asistencia: {{assistence.id_asistencia}} -</h3>
+        <h3>Alumno: {{assistence.alumno.nombre}} - {{assistence.alumno.apellido}} -  {{assistence.alumno.dni}} </h3>
+        <h3>Fecha de asistencia: {{assistence.fecha_asistencia}}</h3>
+        <h3>Actividad : {{assistence.actividad.nivel}}-{{assistence.actividad.categoria}}</h3>
+      </div>
+    </div>
+    </div>
